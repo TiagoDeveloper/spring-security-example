@@ -94,6 +94,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	                .compact();
 	   
 	        response.addHeader("Authorization","Bearer "+token);
+	        response.addHeader("username",user.getUsername());
 		chain.doFilter(request, response);
 	}
 	
